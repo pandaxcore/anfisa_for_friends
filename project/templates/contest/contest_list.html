@@ -5,9 +5,11 @@
 {% endblock %}
 
 {% block content %}
-{% for ice_cream in list %}
+  {% for proposal in contest_proposals %}
     <div>
-        {{ ice_cream.id }}, {{ ice_cream.title }}, {{ ice_cream.price }}, {{ ice_cream.description }}, {{ ice_cream.comment }}
+      {{ proposal.id }}, {{ proposal.title }}, {{ proposal.price }},
+      {{ proposal.description }}{% if proposal.comment %}, {{ proposal.comment }}{% endif %}
+      <!-- Здесь должны быть ссылки на редактирование и удаление записей -->
     </div>
-{% endfor %}
+  {% endfor %}
 {% endblock %}

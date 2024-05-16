@@ -1,11 +1,8 @@
-"""Docstring."""
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
 
 class Contest(models.Model):
-    """Docstring."""
-
     title = models.CharField(verbose_name='Название', max_length=20)
     description = models.TextField(verbose_name='Описание')
     price = models.IntegerField(
