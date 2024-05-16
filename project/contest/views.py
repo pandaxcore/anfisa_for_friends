@@ -30,7 +30,7 @@ def delete_proposal(request, pk):
         instance.delete()
         return redirect('contest:list')
 
-    return render(request, 'contest/contest_list.html', context)
+    return render(request, 'contest/form.html', context)
 
 
 def proposal_list(request):
