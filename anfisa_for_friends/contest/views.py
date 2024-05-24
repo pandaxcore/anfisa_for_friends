@@ -1,3 +1,4 @@
+"""Docstring."""
 from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import ContestForm
@@ -5,6 +6,7 @@ from .models import Contest
 
 
 def proposal(request, pk=None):
+    """Docstring."""
     if pk is not None:
         instance = get_object_or_404(Contest, pk=pk)
     else:
@@ -17,6 +19,7 @@ def proposal(request, pk=None):
 
 
 def delete_proposal(request, pk):
+    """Docstring."""
     instance = get_object_or_404(Contest, pk=pk)
     form = ContestForm(instance=instance)
     context = {'form': form}
@@ -27,6 +30,7 @@ def delete_proposal(request, pk):
 
 
 def proposal_list(request):
+    """Docstring."""
     contest_proposals = Contest.objects.order_by('id')
     context = {'contest_proposals': contest_proposals}
     return render(request, 'contest/contest_list.html', context)
